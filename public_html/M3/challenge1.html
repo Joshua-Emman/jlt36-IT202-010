@@ -27,7 +27,7 @@ Requirements:
         </ul>
     </nav>
     <!-- Edit your UCID here -->
-    <header>Header Section (mt85)</header>
+    <header>Header Section (jlt36)</header>
     <!-- Don't make any other edits to the HTML -->
     <main>
         <div class="content">
@@ -56,6 +56,39 @@ Requirements:
 <script src="util.js"></script>
 
 <style>
+    
     /* You're free to make whatever edits you need here, just don't override anything in the styles.css */
     /* See the requirements at the top. If easier, you may copy/paste them here*/
+
+    html, body {
+        height: 100%; /* #3 full viewport height */
+        margin: 0;
+        overflow: hidden; /* #2 prevent browser scrollbar */
+    }
+
+    body.challenge1 {
+        display: flex;
+        flex-direction: column; /* #1 layout header-main-footer verticaly */
+        min-height: 100vh; /* #3 page fills viewport */
+    }
+
+    header,
+    footer {
+        flex: 0 0 auto; /* #1 keeps header/footer fixed */
+    }
+
+    main {
+        flex: 1; /* #4 main fills remainnig space */
+        min-height: 0;
+        display: flex;
+        overflow: hidden;
+    }
+
+    main .content {
+        flex: 1;
+        overflow-y: auto; /* #2 content scrolls independently */
+        /*UCID: jlt36 Date: 3/5/26
+        Summary: used flexbox so header/footer stay fixed, and content scrolls independently. */
+    }
+    
 </style>
