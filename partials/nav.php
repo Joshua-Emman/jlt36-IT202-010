@@ -23,10 +23,13 @@ if ($domain != "localhost") {
 session_start();
 require(__DIR__."/../lib/functions.php");
 ?>
+<link rel="stylesheet" href="<?php echo $BASE_PATH; ?>/styles.css">
+<script src="<?php echo $BASE_PATH; ?>/helpers.js"></script>
 <nav>
     <ul>
         <?php if (is_logged_in()) : ?>
             <li><a href="landing.php">Landing</a></li>
+            <li><a href="profile.php">Profile</a></li>
         <?php endif; ?>
         <?php if (!is_logged_in()) : ?>
             <li><a href="login.php">Login</a></li>
