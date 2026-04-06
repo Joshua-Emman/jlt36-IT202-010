@@ -25,6 +25,7 @@ require(__DIR__."/../lib/functions.php");
 ?>
 <link rel="stylesheet" href="<?php get_url('styles.css', true);?>">
 <script src="<?php get_url('helpers.js', true);?>"></script>
+<script src="https://matttoegel.github.io/IT202-Utils/submission-utils.js"></script>
 <nav>
     <ul>
         <?php if (is_logged_in()) : ?>
