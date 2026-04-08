@@ -1,5 +1,5 @@
 <?php
-
+require(__DIR__ . "/../../partials/nav.php");
 ?>
 <h3>Login</h3>
 <form onsubmit="return validate(this)" method="POST">
