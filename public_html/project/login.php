@@ -1,4 +1,7 @@
 <?php
+ob_start();
+?>
+<?php
 require(__DIR__ . "/../../partials/nav.php");
 ?>
 <h3>Login</h3>
@@ -129,6 +132,7 @@ if (isset($_POST["email"], $_POST["password"])) {
                         
                         error_log("Login Session Data: " . var_export($_SESSION["user"], true));
                         header("Location: /project/landing.php");
+                        exit;
                     } else {
                         //echo "Invalid password<br>";
                         $ambigify = true; // ambiguous login attempt
@@ -152,4 +156,8 @@ if (isset($_POST["email"], $_POST["password"])) {
 
 <?php
 require(__DIR__ . "/../../partials/flash.php");
+?>
+
+<?php
+ob_end_flush();
 ?>
