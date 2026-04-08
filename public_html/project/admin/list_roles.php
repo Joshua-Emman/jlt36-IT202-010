@@ -1,11 +1,18 @@
 <?php
 //note we need to go up 1 more directory
-require(__DIR__ . "/../../../partials/nav.php");
+require_once(__DIR__ . "/../../../lib/functions.php");
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (!has_role("Admin")) {
     flash("You don't have permission to view this page", "warning");
-    die(header("Location: " . get_url("landing.php")));
+    header("Location: /project/landing.php");
+    exit;
 }
+
+require(__DIR__ . "/../../../partials/nav.php");
+
 //handle the toggle first so SELECT pulls fresh data
 if (isset($_POST["role_id"])) {
     $role_id = se($_POST, "role_id", "", false);
