@@ -5,11 +5,11 @@ require(__DIR__ . "/../../partials/nav.php");
 <form onsubmit="return validate(this)" method="POST">
     <div>
         <label for="email">Email or Username</label>
-        <input id="email" type="text" name="email"  value="<?php se($_POST, 'email'); ?>" />
+        <input id="email" type="text" name="email" required value="<?php se($_POST, 'email'); ?>" />
     </div>
     <div>
         <label for="pw">Password</label>
-        <input type="password" id="pw" name="password"  minlength="8" />
+        <input type="password" id="pw" name="password" required minlength="8" />
     </div>
     <input type="submit" value="Login" />
 </form>
@@ -126,10 +126,9 @@ if (isset($_POST["email"], $_POST["password"])) {
                         }
                         //save roles or empty array
                         $_SESSION["user"]["roles"] = isset($roles) ? $roles : [];
-
+                        
                         error_log("Login Session Data: " . var_export($_SESSION["user"], true));
                         header("Location: landing.php");
-                        exit;
                     } else {
                         //echo "Invalid password<br>";
                         $ambigify = true; // ambiguous login attempt
