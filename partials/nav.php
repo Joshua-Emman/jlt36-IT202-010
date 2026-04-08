@@ -2,6 +2,7 @@
 //include functions here so we can have it on every page that uses the nav bar
 //that way we don't need to include so many other files on each page
 //nav will pull in functions and functions will pull in db
+require(__DIR__."/../lib/functions.php");
 
 // checking to see if domain has a port number attached (localhost)
 $domain = $_SERVER["HTTP_HOST"];
@@ -21,7 +22,6 @@ if ($domain != "localhost") {
     ]);
 }
 session_start();
-require(__DIR__."/../lib/functions.php");
 ?>
 <link rel="stylesheet" href="<?php get_url('styles.css', true);?>">
 <script src="<?php get_url('helpers.js', true);?>"></script>
