@@ -1,5 +1,7 @@
 <?php
 require_once(__DIR__ . "/../../lib/functions.php");
+session_start();
+
 if (!is_logged_in()) {
     flash("You must be logged in to view this page.", "danger");
     header("Location: $BASE_PATH/login.php");
