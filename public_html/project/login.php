@@ -1,5 +1,5 @@
 <?php
-require(__DIR__ . "/../../partials/nav.php");
+
 ?>
 <h3>Login</h3>
 <form onsubmit="return validate(this)" method="POST">
@@ -128,7 +128,7 @@ if (isset($_POST["email"], $_POST["password"])) {
                         $_SESSION["user"]["roles"] = isset($roles) ? $roles : [];
                         
                         error_log("Login Session Data: " . var_export($_SESSION["user"], true));
-                        header("Location: landing.php");
+                        header("Location: /project/landing.php");
                     } else {
                         //echo "Invalid password<br>";
                         $ambigify = true; // ambiguous login attempt
