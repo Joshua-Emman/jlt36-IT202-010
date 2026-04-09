@@ -157,11 +157,11 @@ if (isset($_POST["currentPassword"], $_POST["newPassword"], $_POST["confirmPassw
 <form method="POST" onsubmit="return validate(this);">
     <div class="mb-3">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" value="<?php se($email); ?>" />
+        <input id="email" type="email" name="email" value="<?php se($email); ?>" required />
     </div>
     <div class="mb-3">
         <label for="username">Username</label>
-        <input type="text" name="username" id="username" value="<?php se($username); ?>" />
+        <input type="text" name="username" id="username" value="<?php se($username); ?>" required maxlength="30" pattern="^[a-z0-9_-]{3,30}$" title="Username must be lowercase, alphanumerical, and can only contain _ or -" />
     </div>
     <!-- DO NOT PRELOAD PASSWORD -->
     <div>Password Reset</div>
@@ -171,27 +171,44 @@ if (isset($_POST["currentPassword"], $_POST["newPassword"], $_POST["confirmPassw
     </div>
     <div class="mb-3">
         <label for="np">New Password</label>
-        <input type="password" name="newPassword" id="np" />
+        <input type="password" name="newPassword" id="np" minlength="8" />
     </div>
     <div class="mb-3">
         <label for="conp">Confirm Password</label>
-        <input type="password" name="confirmPassword" id="conp" />
+        <input type="password" name="confirmPassword" id="conp" minlength="8" />
     </div>
     <input type="submit" value="Update Profile" name="save" />
 </form>
 
 <script>
     function validate(form) {
+        let email = form.email.value.trim();
+        let username = form.username.value.trim();
         let pw = form.newPassword.value;
         let con = form.confirmPassword.value;
         let isValid = true;
         //TODO add other client side validation....
 
+        let usernamePattern = /^[a-z0-9_-]{3,30}$/;
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         //example of using flash via javascript
         //find the flash container, create a new element, appendChild
         // NOTE: we'll extract the flash code to a function later
+        if (!usernamePattern.test(username)) {
+            flash("(js) Username must be lowercase, alphanumerical, and can only contain _ or -", "danger");
+            isValid = false;
+        }
+        if (!emailPattern.test(email)) {
+            flash("(js) Invalid email address.", "danger");
+            isValid = false;
+        }
+        if (pw.length > 0 && pw.length < 8) {
+            flash("(js) Password must be at least 8 characters long", "danger");
+            isValid = false;
+        }
         if (pw !== con) { // first JS validation example
-            flash("Password and confirm password must match", "danger");
+            flash("(js) Password and confirm password must match", "danger");
             isValid = false;
         }
         // returning false will prevent the form from submitting
