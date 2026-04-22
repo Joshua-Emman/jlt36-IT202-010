@@ -5,6 +5,7 @@ ob_start();
 require(__DIR__ . "/../../partials/nav.php");
 ?>
 <h3>Login</h3>
+//jlt36 4/8/26
 <form onsubmit="return validate(this)" method="POST">
     <div>
         <label for="email">Email or Username</label>
@@ -18,6 +19,7 @@ require(__DIR__ . "/../../partials/nav.php");
 </form>
 <script>
     function validate(form) {
+        //jlt36 4/8/26
         //TODO 1: implement JavaScript validation (you'll do this on your own towards the end of Milestone1)
         //ensure it returns false for an error and true for success
         let email = form.email.value.trim();
@@ -56,6 +58,7 @@ require(__DIR__ . "/../../partials/nav.php");
     }
 </script>
 <?php
+//jlt36 4/8/26
 //TODO 2: add PHP Code
 if (isset($_POST["email"], $_POST["password"])) {
     // still leveraging the property as "email", but it can be a username
@@ -104,6 +107,7 @@ if (isset($_POST["email"], $_POST["password"])) {
         //TODO 4: Check password and fetch user
         $db = getDB();
         // fetch by email or username
+        //jlt36 4/8/26
         $stmt = $db->prepare("SELECT id, email, password, username from Users where email = :email OR username = :email");
         try {
             $r = $stmt->execute([":email" => $email]);

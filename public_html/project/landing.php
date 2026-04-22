@@ -9,7 +9,7 @@ if (!is_logged_in()) {
     exit;
 }
 require(__DIR__ . "/../../partials/nav.php");
-
+//jlt36 4/8/26
 error_log("Session: " . var_export($_SESSION, true));
 ?>
 <h1>Landing Page</h1>

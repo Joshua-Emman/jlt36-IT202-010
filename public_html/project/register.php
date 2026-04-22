@@ -2,6 +2,7 @@
 require(__DIR__ . "/../../partials/nav.php");
 ?>
 <h3>Register</h3>
+//jlt36 4/8/26
 <form onsubmit="return validate(this)" method="POST">
     <div>
         <label for="email">Email</label>
@@ -25,6 +26,7 @@ require(__DIR__ . "/../../partials/nav.php");
     function validate(form) {
         //TODO 1: implement JavaScript validation (you'll do this on your own towards the end of Milestone1)
         //ensure it returns false for an error and true for success
+        //jlt36 4/8/26
         let email = form.email.value.trim();
         let username = form.username.value.trim();
         let password = form.password.value;
@@ -54,6 +56,7 @@ require(__DIR__ . "/../../partials/nav.php");
 </script>
 <?php
 //TODO 2: add PHP Code
+//jlt36 4/8/26
 if (isset($_POST["email"], $_POST["password"], $_POST["confirm"], $_POST["username"])) {
 
     $email = se($_POST, "email", "", false);
@@ -99,6 +102,7 @@ if (isset($_POST["email"], $_POST["password"], $_POST["confirm"], $_POST["userna
 
     if (!$hasError) {
         // TODO 4: Hash password and store record in DB
+        //jlt36 4/8/26
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
         $db = getDB(); // available due to the `require()` of `functions.php`
         // Code for inserting user data into the database

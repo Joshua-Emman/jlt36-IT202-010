@@ -8,7 +8,7 @@ if (!is_logged_in()) {
     exit;
 }
 require_once(__DIR__ . "/../../partials/nav.php");
-
+//jlt36 4/8/26
 ?>
 <?php
 $user_id = get_user_id(); // get id from session
@@ -36,6 +36,7 @@ if (isset($_POST["email"], $_POST["username"])) {
         flash("Username must be lowercase, alphanumerical, and can only contain _ or -", "danger");
         $hasError = true;
     }
+    //jlt36 4/8/26
     // check for changes
     if (($username != $new_username || $email != $new_email) && !$hasError) {
         $saved = false;
@@ -93,6 +94,7 @@ if (isset($_POST["email"], $_POST["username"])) {
 if (isset($_POST["currentPassword"], $_POST["newPassword"], $_POST["confirmPassword"])) {
 
     //check/update password
+    //jlt36 4/8/26
     $current_password = se($_POST, "currentPassword", null, false);
     $new_password = se($_POST, "newPassword", null, false);
     $confirm_password = se($_POST, "confirmPassword", null, false);
@@ -179,6 +181,7 @@ if (isset($_POST["currentPassword"], $_POST["newPassword"], $_POST["confirmPassw
     </div>
     <input type="submit" value="Update Profile" name="save" />
 </form>
+//jlt36 4/8/26
 
 <script>
     function validate(form) {
@@ -214,6 +217,7 @@ if (isset($_POST["currentPassword"], $_POST["newPassword"], $_POST["confirmPassw
         // returning false will prevent the form from submitting
         return isValid;
     }
+    //jlt36 4/8/26
 </script>
 <?php
 require_once(__DIR__ . "/../../partials/flash.php");
