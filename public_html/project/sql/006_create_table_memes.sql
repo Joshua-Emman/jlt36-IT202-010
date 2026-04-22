@@ -1,3 +1,8 @@
+-- UCID: jlt36
+-- Date: 04/22/2026
+-- Description: Creates the Memes table used to store both API-fetched and manually created meme records. 
+-- Includes required fields, timestamps, and an is_api flag to distinguish record origin.
+
 CREATE TABLE `IT202-M25-Memes` (
     `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `title` varchar(255) NOT NULL,
