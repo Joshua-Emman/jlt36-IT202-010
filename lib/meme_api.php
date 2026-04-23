@@ -4,13 +4,13 @@ require_once(__DIR__ . "/load_api_keys.php");
 
 // UCID: jlt36
 // Date: 04/22/2026
-// Description: Fetches meme data from the meme API, transforms it to match the database schema,
+// Fetches meme data from the meme API, transforms it to match the database schema,
 // and returns either a list of memes or a single meme record ready for insertion.
 
 function fetch_memes($count = 10)
 {
     $data = ["count" => $count];
-    $endpoint = "https://reddit-meme.p.rapidapi.com/memes/top";
+    $endpoint = "https://reddit-meme.p.rapidapi.com/memes";
     $isRapidAPI = true;
     $rapidAPIHost = "reddit-meme.p.rapidapi.com";
     $result = get($endpoint, "MEMEAPI_KEY", $data, $isRapidAPI, $rapidAPIHost);
@@ -34,6 +34,10 @@ function fetch_memes($count = 10)
     } else {
         $memes = [];
     }
+
+// UCID: jlt36
+// Date: 04/22/2026
+// Fetches meme data from the meme API and transforms it to match the database schema.
 
     foreach ($memes as $meme) {
         if (!is_array($meme)) {
