@@ -91,7 +91,7 @@ if (isset($_POST["action"])) {
     } elseif ($action === "create") {
         // UCID: jlt36
         // Date: 04/22/2026
-        // Description: Handles manual meme creation by validating user input and preparing a custom meme record.
+        // Description: Handles manual meme creation by validating user input and preparing a custom meme record
         $meme = [
             "title" => clean_text($_POST["title"] ?? ""),
             "post_link" => clean_text($_POST["post_link"] ?? ""),
@@ -274,6 +274,10 @@ function switchTab(tabId, clickedLink) {
     links.forEach(link => link.classList.remove("active"));
     clickedLink.classList.add("active");
 }
+
+// UCID: jlt36
+// Date: 04/22/2026
+// Description: Client-side validation for the manual meme form. Checks required fields and length limits before the form is submitted.
 
 function validate(form) {
     const title = form.title.value.trim();
