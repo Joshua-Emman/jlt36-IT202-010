@@ -148,7 +148,7 @@ try {
                                 <strong>Source:</strong> <?php echo se($record, "is_api", 0, false) ? "API" : "Manual"; ?>
                             </p>
 
-                            <a class="btn btn-primary btn-sm" href="<?php echo get_url("admin/view_meme.php") . "?id=" . urlencode($record["id"]); ?>">View</a>
+                            <a class="btn btn-primary btn-sm" href="<?php echo get_url("view_meme.php") . "?id=" . urlencode($record["id"]); ?>">View</a>
                             <a class="btn btn-warning btn-sm" href="<?php echo get_url("admin/edit_meme.php") . "?id=" . urlencode($record["id"]); ?>">Edit</a>
                             <a class="btn btn-danger btn-sm" href="<?php echo get_url("admin/delete_meme.php") . "?id=" . urlencode($record["id"]); ?>">Delete</a>
                         </div>
