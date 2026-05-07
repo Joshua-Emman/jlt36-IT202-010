@@ -149,6 +149,12 @@ try {
                             </p>
 
                             <a class="btn btn-primary btn-sm" href="<?php echo get_url("view_meme.php") . "?id=" . urlencode($record["id"]); ?>">View</a>
+
+                            <form method="POST" action="<?php echo get_url("save_meme.php"); ?>" style="display:inline;">
+                                <input type="hidden" name="meme_id" value="<?php se($record, "id"); ?>">
+                                <button type="submit" class="btn btn-success btn-sm">Save Meme</button>
+                            </form>
+
                             <a class="btn btn-warning btn-sm" href="<?php echo get_url("admin/edit_meme.php") . "?id=" . urlencode($record["id"]); ?>">Edit</a>
                             <a class="btn btn-danger btn-sm" href="<?php echo get_url("admin/delete_meme.php") . "?id=" . urlencode($record["id"]); ?>">Delete</a>
                         </div>
