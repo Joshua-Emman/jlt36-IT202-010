@@ -150,6 +150,10 @@ try {
 
                             <a class="btn btn-primary btn-sm" href="<?php echo get_url("view_meme.php") . "?id=" . urlencode($record["id"]); ?>">View</a>
 
+                            <!-- UCID: jlt36 -->
+                            <!-- Date: 05/07/2026 -->
+                            <!-- Description: save button -->
+                            
                             <form method="POST" action="<?php echo get_url("save_meme.php"); ?>" style="display:inline;">
                                 <input type="hidden" name="meme_id" value="<?php se($record, "id"); ?>">
                                 <button type="submit" style="background:none; border:none; color:#0000EE; text-decoration:underline; cursor:pointer; padding:0; font:inherit;">
