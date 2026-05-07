@@ -1,6 +1,10 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
 
+// UCID: jlt36
+// Date: 05/07/2026
+// Description: checks for logged in user and current user id + this code handles the filter/sort options and enforces the record limit between 1 and 100.
+
 is_logged_in(true);
 
 $user_id = get_user_id();
@@ -12,9 +16,6 @@ $sort = $_GET["sort"] ?? "saved";
 $order = strtoupper($_GET["order"] ?? "DESC");
 $limit = (int)($_GET["limit"] ?? 10);
 
-// UCID: jlt36
-// Date: 05/07/2026
-// Description: Validates the selected limit and defaults to 10 if outside the required 1-100 range.
 if ($limit < 1 || $limit > 100) {
     $limit = 10;
 }
@@ -207,6 +208,10 @@ try {
     <form method="POST" action="<?php echo get_url("remove_all_my_memes.php"); ?>" onsubmit="return confirm('Remove all saved memes from your account?');" class="mb-4">
         <button type="submit" class="btn btn-danger">Remove All Saved Memes</button>
     </form>
+
+// Descrpition: Each saved meme shows a summary, a View button for the single meme page,
+// and a Remove button that deletes only the saved relationship.
+// If no records match, the page shows “No results available.”
 
     <?php if (count($results) == 0) : ?>
         <p>No results available.</p>
