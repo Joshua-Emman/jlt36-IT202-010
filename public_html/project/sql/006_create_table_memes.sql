@@ -1,6 +1,6 @@
 -- UCID: jlt36
 -- Date: 04/22/2026
--- Description: Creates the Memes table used to store both API-fetched and manually created meme records. 
+-- Description: Creates the Memes table used to store both API-fetched and manually created meme records.
 -- Includes required fields, timestamps, and an is_api flag to distinguish record origin.
 
 CREATE TABLE `IT202-M25-Memes` (
