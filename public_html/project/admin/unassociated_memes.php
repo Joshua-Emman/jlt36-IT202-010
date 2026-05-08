@@ -136,6 +136,10 @@ try {
 }
 ?>
 
+// UCID: jlt36
+// Date: 05/07/2026
+// Description: This section displays the unassociated meme stats and filter form. It shows the total unassociated memes, 
+// the number matching the current filters, the number shown on the page, and filter/sort options including the user-controlled limit field.
 <div class="container-fluid">
     <h3>Unassociated Memes</h3>
 
@@ -194,6 +198,11 @@ try {
             <a class="btn btn-secondary" href="<?php echo get_url("admin/unassociated_memes.php"); ?>">Reset</a>
         </div>
     </form>
+
+// UCID: jlt36
+// Date: 05/07/2026
+// Description: This section displays the unassociated meme results. If no records match the filters, it shows “No results available.”
+// Each meme card shows a short summary and includes a view button that links to the single meme details page.
 
     <?php if (count($results) == 0) : ?>
         <p>No results available.</p>
