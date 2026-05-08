@@ -104,7 +104,7 @@ if (isset($_POST["search"])) {
 
 <div class="container-fluid">
     <h3>Assign Memes to Users</h3>
-
+<!-- UCID: jlt36 | Date: 05/07/2026 | Description: Form lets the admin search by partial username and partial meme title before selecting associations. -->
     <form method="POST" class="row g-3 mb-4">
         <div class="col-md-4">
             <label for="username" class="form-label">Username Search</label>
