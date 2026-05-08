@@ -190,7 +190,7 @@ try {
     </form>
 
     <?php if (!empty($username)) : ?>
-        <!-- UCID: jlt36 | Date: 05/07/2026 | Description: Removes all associations for users matching the current username filter. -->
+        <!-- UCID: jlt36 | Date: 05/07/2026 | Description: Removes all associations for users matching the current username filter  -->
         <form method="POST" action="<?php echo get_url("admin/remove_matching_user_memes.php"); ?>" onsubmit="return confirm('Remove all associations for matching users?');" class="mb-4">
             <input type="hidden" name="username" value="<?php se($username); ?>">
             <button type="submit" class="btn btn-danger">Remove Associations for Matching Users</button>
@@ -230,7 +230,7 @@ try {
                         <td>
                             <a class="btn btn-primary btn-sm" href="<?php echo get_url("view_meme.php") . "?id=" . urlencode($record["meme_id"]); ?>">View</a>
 
-                            <!-- UCID: jlt36 | Date: 05/07/2026 | Description: Removes only this user-meme relationship, not the user or meme. -->
+                            <!-- UCID: jlt36 | Date: 05/07/2026 | Description: Removes only this user meme relationship, not the user or meme -->
                             <form method="POST" action="<?php echo get_url("admin/remove_user_meme.php"); ?>" style="display:inline;" onsubmit="return confirm('Remove this association?');">
                                 <input type="hidden" name="association_id" value="<?php se($record, "association_id"); ?>">
                                 <button type="submit" class="btn btn-danger btn-sm">Remove</button>
