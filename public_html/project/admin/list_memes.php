@@ -154,11 +154,9 @@ try {
                             <!-- Date: 05/07/2026 -->
                             <!-- Description: save button -->
                             
-                            <form method="POST" action="<?php echo get_url("save_meme.php"); ?>" style="display:inline;">
-                                <input type="hidden" name="meme_id" value="<?php se($record, "id"); ?>">
-                                <button type="submit" style="background:none; border:none; color:#0000EE; text-decoration:underline; cursor:pointer; padding:0; font:inherit;">
-                                Save
-                                </button>
+                            <form method="POST" action="<?php echo get_url("save_meme.php"); ?>" style="display:inline-block; margin:0;">
+                            <input type="hidden" name="meme_id" value="<?php se($record, "id"); ?>">
+                            <button type="submit" class="btn btn-primary btn-sm">Save</button>
                             </form>
 
                             <a class="btn btn-warning btn-sm" href="<?php echo get_url("admin/edit_meme.php") . "?id=" . urlencode($record["id"]); ?>">Edit</a>
