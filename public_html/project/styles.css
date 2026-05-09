@@ -1,108 +1,275 @@
-/* Moved from flash.php*/
+/* Moved from flash.php */
 /* Define basic colors for standard bootstrap alert classes, scoped to .container#flash */
 /* This will be later moved into a separate CSS file in a future lesson */
 /* And once we add bootstrap, we will use the bootstrap classes instead of these */
 
 .container#flash .alert {
     padding: 1rem;
-    border-radius: 0.25rem;
+    border-radius: 0;
     font-size: 1rem;
+    margin: 1rem auto;
+    max-width: 700px;
+    border: 1px solid #333;
 }
 
 .container#flash .alert-primary {
-    background-color: #cfe2ff;
-    color: #084298;
+    background-color: #102a43;
+    color: #cfe2ff;
 }
 
 .container#flash .alert-secondary {
-    background-color: #e2e3e5;
-    color: #41464b;
+    background-color: #2b2f36;
+    color: #e2e3e5;
 }
 
 .container#flash .alert-success {
-    background-color: #d1e7dd;
-    color: #0f5132;
+    background-color: #0f2f24;
+    color: #d1e7dd;
 }
 
 .container#flash .alert-danger {
-    background-color: #f8d7da;
-    color: #842029;
+    background-color: #3a161a;
+    color: #f8d7da;
 }
 
 .container#flash .alert-warning {
-    background-color: #fff3cd;
-    color: #664d03;
+    background-color: #3a2f0b;
+    color: #fff3cd;
 }
 
 .container#flash .alert-info {
-    background-color: #cff4fc;
-    color: #055160;
+    background-color: #10333a;
+    color: #cff4fc;
 }
 
 .container#flash .alert-light {
-    background-color: #fefefe;
-    color: #636464;
+    background-color: #2b2f36;
+    color: #f8f9fa;
 }
 
 .container#flash .alert-dark {
-    background-color: #212529;
-    color: #fff;
+    background-color: #000000;
+    color: #ffffff;
 }
 
-/* Update the below for Milestone 1 requirements */
+/* General page styling */
+
+body {
+    background-color: #111418;
+    color: #e9ecef;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+
+nav {
+    background-color: #050505;
+    padding: 0.75rem 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #333842;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
 
 nav li {
-    display: inline;
-    background-color: rebeccapurple;
+    display: inline-block;
+    list-style: none;
+    margin-right: 0.5rem;
 }
 
 nav li a {
-    color: rgb(4, 179, 120);
-    padding: 0.25rem;
+    color: #e9ecef;
+    text-decoration: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0;
 }
 
 nav li a:hover {
-    color: pink;
+    background-color: #1f252d;
+    color: #ffffff;
 }
 
+/* Removes old message */
 nav::after {
-    text-align: center;
-    content: "(*Edit the hideous css)";
-    color: red;
+    content: "";
 }
 
-label {
-    border: #212529 dashed 2px;
-    background-color: bisque;
+/* Layout */
+
+.container,
+.container-fluid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
-input {
-    border-radius: 25%;
-    padding: 0.25rem;
-}
-
-input:hover {
-    transform: rotateZ(10deg);
-}
-
-form,
+h1,
+h2,
 h3 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Forms */
+
+form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 1.5rem auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-body {
-    background-color: rgb(0, 68, 48);
-    color: rgb(255, 19, 235);
+/* Centers each field group */
+form div,
+form .mb-3,
+form .col-md-1,
+form .col-md-2,
+form .col-md-3,
+form .col-md-4,
+form .col-md-6,
+form .col-12 {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-input[type="submit"]:hover {
-    transform: scale(1.15);
+/* Labels */
+label {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    border: none;
+    background-color: transparent;
+    color: #e9ecef;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    text-align: left;
 }
 
-input[type="submit"]:active {
-    transform: scale(0.75);
+/* Text boxes */
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #444b55;
+    border-radius: 0;
+    padding: 0.5rem;
+    color: #ffffff;
+    background-color: #1b1f24;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin: 0 auto 0.75rem auto;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    transform: none;
+    border-color: #6c757d;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: none;
+}
+
+/* Buttons */
+
+input[type="submit"],
+button[type="submit"],
+button,
+.btn {
+    width: auto;
+    background-color: #0d6efd;
+    color: #ffffff;
+    border: 1px solid #0d6efd;
+    border-radius: 0;
+    padding: 0.45rem 0.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+button:hover,
+.btn:hover {
+    background-color: #0b5ed7;
+    border-color: #0b5ed7;
+    color: #ffffff;
+    transform: none;
+}
+
+input[type="submit"]:active,
+button[type="submit"]:active,
+button:active,
+.btn:active {
+    transform: none;
+}
+
+/* Cards */
+
+.card {
+    background-color: #1b1f24;
+    border: 1px solid #333842;
+    border-radius: 0;
+    margin-bottom: 1rem;
+    color: #e9ecef;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+/* Tables */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1b1f24;
+    color: #e9ecef;
+    margin-top: 1rem;
+}
+
+th,
+td {
+    border: 1px solid #333842;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: #050505;
+    color: #ffffff;
+}
+
+/* Links */
+
+a {
+    color: #6ea8fe;
+}
+
+a:hover {
+    color: #9ec5fe;
 }
