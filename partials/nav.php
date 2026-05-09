@@ -23,7 +23,7 @@ if ($domain != "localhost") {
 }
 session_start();
 ?>
-<link rel="stylesheet" href="<?php get_url('styles.css', true);?>">
+<link rel="stylesheet" href="<?php echo get_url('styles.css'); ?>">
 <script src="<?php get_url('helpers.js', true);?>"></script>
 <script src="https://matttoegel.github.io/IT202-Utils/submission-utils.js"></script>
 
